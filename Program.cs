@@ -255,10 +255,8 @@ int[,,] CreateRandomArray()
                             array[i,j,k] = temp;
                             break;
                         }
-                        
                     }
                 }
-                
             }
         }
     return array;
@@ -274,8 +272,7 @@ bool CheckNumber(int[,,] array, int num)
                     if (array[i,j,k] == num)
                     return false;
                 }
-                
-            }
+             }
         }
     return true;
 }
@@ -312,22 +309,18 @@ void FillingInCircle(int[,] array)
     int counter = 0;
     while(number <= array.GetLength(0) * array.GetLength(1))
     {
-        //Движение вправо
         for(int j = counter; j < array.GetLength(1) - counter; j++,number++)
         {
             array[counter, j] = number;
         }
-        //Движение вниз
         for(int i = counter + 1 ; i < array.GetLength(0) - counter; i++,number++)
         {
             array[i, (array.GetLength(1)-1) - counter] = number;
         }
-        //Движение влево
         for(int j = (array.GetLength(1)-2) - counter; j > 0 + counter; j--,number++)
         {
             array[(array.GetLength(0)-1) - counter, j] = number;
         }
-        //Дивжение вверх
         for(int i = (array.GetLength(0)-1) - counter; i > 0 + counter; i--, number++)
         {
             array[i, counter] = number;
